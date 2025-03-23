@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benjy Grub - </title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <!-- Toastr CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    
+    <style>
+       .head {
+    width: 100%;
+    height: 241px !important; /* Ensure fixed height */
+    background:#8D0000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    text-align: center;
+}
+nav{
+    margin: 0;
+    padding: 0;
+}
+.head nav h2{
+    font-family: 'Copperplate', sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 24px;
+    letter-spacing: -9%;
+    color: #FFFFFF;
+    padding: 40px 40px;
+
+}
+.second-section h2{
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 48px;
+    letter-spacing: -3%;
+    color: #CC3137;
+    font-family: 'Copperplate', sans-serif;
+    padding: 30px 0px;
+}
+.second-section p{
+    font-family: "DM Sans", sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 48px;
+    text-align: center;
+    color: #5A5A5A;
+}.forms {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    width: 100%;
+}
+
+.forms form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 712px; /* Fixed width for form */
+    padding: 20px;
+  
+    border-radius: 10px;
+}
+
+.forms form input,
+.forms form textarea {
+    width: 100%;
+    padding: 20px 40px;
+    margin-bottom: 15px;
+    border: 1px solid #CC3137;
+   
+    font-size: 24px;
+    font-family: "DM Sans", sans-serif;
+}
+
+.forms form input:focus,
+.forms form textarea:focus {
+    border-color: #CC3137;
+    outline: none;
+}
+
+.forms form textarea {
+    resize: none;
+    height: 120px;
+}
+
+.forms form button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: #CC3137;
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: #FFFFFF;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.forms form button:hover {
+    background: #a8262b;
+}
+/* Style placeholder text */
+.forms form input::placeholder,
+.forms form textarea::placeholder {
+    color: #CC3137; /* Light gray color */
+    font-size: 24px;
+    font-weight: 500;
+    font-family: "DM Sans", sans-serif;
+    line-height: 24px;
+    opacity: 1; /* Ensures full visibility */
+}
+
+/* Change placeholder color on focus */
+.forms form input:focus::placeholder,
+.forms form textarea:focus::placeholder {
+    color: #CC3137; /* Darker red on focus */
+    opacity: 0.8;
+}
+@media (max-width: 426px){
+    .second-section p {
+        line-height: 40px;
+    }
+}
+
+
+    </style>
+</head>
+<body>
+    <div id="toast" class="toast"></div>
+
+ <div class="head">
+
+
+        <nav>
+            <h2>Benjy Grub</h2>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="private-in-house.html">Private House</a></li>
+                <li><a href="public-sales.html">Public Sales</a></li>
+                <li><a href="legal.html">Legal</a></li>
+                <li><a href="contact-us.html">Contact Us</a></li>
+                <li><a href="about-us.html">About Us</a></li>
+                
+
+            </ul>
+        </nav>
+    </div>
+
+      
+
+    <div class="second-section">
+
+        <h2>Contact US</h2>
+        <p>Reach out to us anytime, we’ll respond as soon as possible!</p>
+
+        <div class="forms">
+            <form id="contactForm">
+                <input type="email" id="email" placeholder="Email">
+                <input type="text" id="name" placeholder="Name">
+                <textarea id="message" rows="4" placeholder="Message"></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+       
+    </div>
+    <div class="footer">
+        <nav>
+            
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="private-in-house.html">Private House</a></li>
+                <li><a href="public-sales.html">Public Sales</a></li>
+                <li><a href="legal.html">Legal</a></li>
+                <li><a href="contact-us.html">Contact Us</a></li>
+                <li><a href="about-us.html">About Us</a></li>
+
+            </ul>
+            <h2>Benjy Grub</h2>
+        </nav>
+
+    </div>
+    <script>
+          document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const email = document.getElementById("email").value.trim();
+            const name = document.getElementById("name").value.trim();
+            const message = document.getElementById("message").value.trim();
+
+            if (!email || !name || !message) {
+                toastr.error("All fields are required!");
+                return;
+            }
+            if (!validateEmail(email)) {
+                toastr.error("Invalid email format!");
+                return;
+            }
+
+            toastr.success("Message sent successfully!");
+        });
+
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        } setTimeout(() => toast.classList.remove("show"), 3000);
+        
+    </script>
+</body>
+</html>
